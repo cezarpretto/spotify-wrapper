@@ -1,6 +1,6 @@
 # Spotify Wrapper
 
-[![Build Status](https://travis-ci.org/cezarpretto/spotify-wrapper.svg?branch=master)](https://travis-ci.org/cezarpretto/spotify-wrapper)
+[![Build Status](https://travis-ci.org/cezarpretto/spotify-wrapper.svg?branch=master)](https://travis-ci.org/cezarpretto/spotify-wrapper) [![Coverage Status](https://coveralls.io/repos/github/cezarpretto/spotify-wrapper/badge.svg?branch=master)](https://coveralls.io/github/cezarpretto/spotify-wrapper?branch=master)
 
 A wrapper to work with the [Spotify Web API](https://developer.spotify.com/web-api/).
 
