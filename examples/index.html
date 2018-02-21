@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Spotify Wrapper Test</title>
+  </head>
+  <body>
+    <input type="text" name="" value="" id="txt-search" placeholder="Pesquisar Álbum">
+    <button type="button" id="btn-search">
+      Pesquisar
+    </button>
+    <hr>
+    <div id="albums">
+
+    </div>
+    <script src="../dist/spotify-wrapper.umd.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+      const albumsEl = document.querySelector('#albums')
+      document.querySelector('#btn-search').addEventListener('click', function() {
+        getAlbums()
+      })
+
+      function getAlbums() {
+        const input = document.querySelector('#txt-search')
+        const albums = spotifyWrapper.searchAlbums(input.value)
+        albums
+          .then(data => {
+            input.value = ''
+            input.focus()
+            markup = data.albums.items.map(item =>
+              `<img src="${item.images[0].url}" alt="${item.name}" />`
+            ).join('')
+
+            albumsEl.innerHTML = markup
+          })
+      }
+    </script>
+  </body>
+</html>
