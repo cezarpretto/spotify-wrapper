@@ -14,7 +14,8 @@
     "prepush": "yarn run lint && yarn run test:coverage",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
     "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
-    "test:coverage": "./node_modules/.bin/nyc yarn run test"
+    "test:coverage": "./node_modules/.bin/nyc yarn run test",
+    "coveralls": "yarn run test:coverage && nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {
     "functions": 80,
